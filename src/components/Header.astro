@@ -1,0 +1,16 @@
+---
+import ColorModePopover from './color-mode-popover.astro'
+---
+
+<div
+  class="z-50 p-3 sticky flex items-center justify-center top-0 left-0 right-0 bg-[rgba(255,255,255,0.2)] dark:bg-[rgba(30,30,30,0.8)] backdrop-blur"
+>
+  <div class="max-w-[640px] flex flex-1 justify-between items-center">
+    <img
+      src="/logo-transparent-white.png"
+      alt="logo"
+      class="w-8 h-8"
+    />
+    <ColorModePopover />
+  </div>
+</div>

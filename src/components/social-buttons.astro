@@ -1,0 +1,29 @@
+---
+import { Icon } from "astro-icon/components";
+import SocialButton from "./social-button.astro";
+---
+
+<div class="flex w-full mt-8 flex-col sm:flex-row sm:space-x-4 sm:w-fit">
+  <SocialButton href="https://twitter.com/aacevski" target="_blank">
+    <Icon name="twitter" class="w-5 h-5 mr-2" />
+    Twitter
+  </SocialButton>
+
+  <SocialButton
+    class="text-[#000000] dark:text-white"
+    href="https://github.com/aacevski"
+    target="_blank"
+  >
+    <Icon name="github" class="w-5 h-5 mr-2" />
+    Github
+  </SocialButton>
+
+  <SocialButton
+    class="text-[rgb(100,65,165)]"
+    href="https://www.twitch.tv/aacevski"
+    target="_blank"
+  >
+    <Icon name="twitch" class="w-5 h-5 mr-2" />
+    Twitch
+  </SocialButton>
+</div>

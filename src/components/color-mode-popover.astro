@@ -1,0 +1,66 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="relative flex items-center">
+  <button
+    id="dropdownDefaultButton"
+    class="text-white font-medium rounded-lg text-sm"
+    type="button"
+  >
+    <Icon name="moon" class="w-5 h-5" />
+  </button>
+
+  <div
+    id="dropdown"
+    class="absolute z-50 top-full bg-white rounded-lg ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-36 dark:bg-[rgba(0,0,0,0.5)] dark:ring-0 transform -translate-x-1/2 hidden"
+  >
+    <ul
+      class="py-2 text-sm text-black dark:text-white font-light"
+      aria-labelledby="dropdownDefaultButton"
+    >
+      <li>
+        <button
+          class="flex px-2 w-full hover:bg-gray-100 dark:hover:bg-neutral-600 dark:hover:text-white p-2 items-center"
+        >
+          <Icon name="sun" class="h-5 w-5 mr-2" />
+          Light
+        </button>
+      </li>
+      <li>
+        <button
+          class="flex px-2 w-full hover:bg-gray-100 dark:hover:bg-neutral-600 dark:hover:text-white p-2 items-center"
+        >
+          <Icon name="moon" class="w-5 h-5 mr-2" />
+          Dark
+        </button>
+      </li>
+      <li>
+        <button
+          class="flex px-2 w-full hover:bg-gray-100 dark:hover:bg-neutral-600 dark:hover:text-white p-2 items-center"
+        >
+          <Icon name="system" class="h-5 w-5 mr-2" />
+          System
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  const dropdown = document.getElementById("dropdown")!;
+  const dropdownToggle = document.getElementById("dropdownDefaultButton")!;
+  dropdownToggle.addEventListener("click", function () {
+    dropdown.classList.toggle("hidden");
+  });
+
+  document.addEventListener("click", function (event) {
+    if (event.target instanceof Node) {
+      const isClickInside = dropdownToggle.contains(event.target);
+
+      if (!isClickInside) {
+        dropdown.classList.add("hidden");
+      }
+    }
+  });
+</script>
