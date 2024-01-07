@@ -2,28 +2,32 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<div class="relative flex items-center">
+<div class="relative flex items-center justify-end md:justify-center">
   <button
     id="dropdownDefaultButton"
-    class="text-white font-medium rounded-lg text-sm"
+    class="text-white font-medium rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-neutral-600 dark:hover:text-white px-2 py-2"
     type="button"
   >
-    <Icon name="moon" class="w-6 h-6" />
+    <Icon name="moon" class="w-5 h-5" />
   </button>
 
   <div
     id="dropdown"
-    class="absolute z-50 top-full bg-white rounded-lg ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-36 dark:bg-[rgba(0,0,0,0.5)] dark:ring-0 transform -translate-x-1/2 hidden"
+    class="absolute z-50 top-10 bg-white rounded-lg ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-24 dark:bg-[rgba(0,0,0,0.5)] dark:ring-0 hidden transition duration-150 ease-in-out"
   >
     <ul
-      class="py-2 text-sm text-black dark:text-white font-light"
+      class="py-2
+    text-xs
+    text-black
+    dark:text-white
+    font-light"
       aria-labelledby="dropdownDefaultButton"
     >
       <li>
         <button
           class="flex px-2 w-full hover:bg-gray-100 dark:hover:bg-neutral-600 dark:hover:text-white p-2 items-center"
         >
-          <Icon name="sun" class="h-6 w-6 mr-2" />
+          <Icon name="sun" class="h-4 w-4 mr-2" />
           Light
         </button>
       </li>
@@ -31,7 +35,7 @@ import { Icon } from "astro-icon/components";
         <button
           class="flex px-2 w-full hover:bg-gray-100 dark:hover:bg-neutral-600 dark:hover:text-white p-2 items-center"
         >
-          <Icon name="moon" class="w-6 h-6 mr-2" />
+          <Icon name="moon" class="w-4 h-4 mr-2" />
           Dark
         </button>
       </li>
@@ -39,28 +43,28 @@ import { Icon } from "astro-icon/components";
         <button
           class="flex px-2 w-full hover:bg-gray-100 dark:hover:bg-neutral-600 dark:hover:text-white p-2 items-center"
         >
-          <Icon name="system" class="h-6 w-6 mr-2" />
+          <Icon name="system" class="h-4 w-4 mr-2" />
           System
         </button>
       </li>
     </ul>
   </div>
-</div>
 
-<script>
-  const dropdown = document.getElementById("dropdown")!;
-  const dropdownToggle = document.getElementById("dropdownDefaultButton")!;
-  dropdownToggle.addEventListener("click", function () {
-    dropdown.classList.toggle("hidden");
-  });
+  <script>
+    const dropdown = document.getElementById("dropdown")!;
+    const dropdownToggle = document.getElementById("dropdownDefaultButton")!;
+    dropdownToggle.addEventListener("click", function () {
+      dropdown.classList.toggle("hidden");
+    });
 
-  document.addEventListener("click", function (event) {
-    if (event.target instanceof Node) {
-      const isClickInside = dropdownToggle.contains(event.target);
+    document.addEventListener("click", function (event) {
+      if (event.target instanceof Node) {
+        const isClickInside = dropdownToggle.contains(event.target);
 
-      if (!isClickInside) {
-        dropdown.classList.add("hidden");
+        if (!isClickInside) {
+          dropdown.classList.add("hidden");
+        }
       }
-    }
-  });
-</script>
+    });
+  </script>
+</div>
