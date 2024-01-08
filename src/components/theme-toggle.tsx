@@ -1,7 +1,7 @@
-import React from "preact/compat";
+import React, { type JSX } from "preact/compat";
 import { useEffect, useRef, useState } from "preact/hooks";
 
-const MoonIcon = () => (
+const MoonIcon = (props: JSX.HTMLAttributes<SVGSVGElement>) => (
   <svg
     class="h-5 w-5 text-black dark:text-white"
     stroke="currentColor"
@@ -11,12 +11,13 @@ const MoonIcon = () => (
     height="1em"
     width="1em"
     xmlns="http://www.w3.org/2000/svg"
+    {...props}
   >
     <path d="M240,96a8,8,0,0,1-8,8H216v16a8,8,0,0,1-16,0V104H184a8,8,0,0,1,0-16h16V72a8,8,0,0,1,16,0V88h16A8,8,0,0,1,240,96ZM144,56h8v8a8,8,0,0,0,16,0V56h8a8,8,0,0,0,0-16h-8V32a8,8,0,0,0-16,0v8h-8a8,8,0,0,0,0,16Zm72.77,97a8,8,0,0,1,1.43,8A96,96,0,1,1,95.07,37.8a8,8,0,0,1,10.6,9.06A88.07,88.07,0,0,0,209.14,150.33,8,8,0,0,1,216.77,153Zm-19.39,14.88c-1.79.09-3.59.14-5.38.14A104.11,104.11,0,0,1,88,64c0-1.79,0-3.59.14-5.38A80,80,0,1,0,197.38,167.86Z"></path>
   </svg>
 );
 
-const SunIcon = () => (
+const SunIcon = (props: JSX.HTMLAttributes<SVGSVGElement>) => (
   <svg
     class="h-5 w-5 text-black dark:text-white"
     stroke="currentColor"
@@ -28,6 +29,7 @@ const SunIcon = () => (
     height="1em"
     width="1em"
     xmlns="http://www.w3.org/2000/svg"
+    {...props}
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
     <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
@@ -35,7 +37,7 @@ const SunIcon = () => (
   </svg>
 );
 
-const SystemIcon = () => (
+const SystemIcon = (props: JSX.HTMLAttributes<SVGSVGElement>) => (
   <svg
     class="h-5 w-5 text-black dark:text-white"
     stroke="currentColor"
@@ -46,6 +48,7 @@ const SystemIcon = () => (
     height="1em"
     width="1em"
     xmlns="http://www.w3.org/2000/svg"
+    {...props}
   >
     <path
       stroke-linecap="round"
@@ -103,17 +106,23 @@ export default function ThemeToggle() {
   }, []);
 
   useEffect(() => {
-    if (theme === "dark") {
+    const isDark = theme === "dark";
+    const isLight = theme === "light";
+
+    if (isDark) {
       document.documentElement.classList.add("dark");
       document
         .getElementById("logo")
         ?.setAttribute("src", "/logo-transparent-white.png");
-    } else {
+    }
+
+    if (isLight) {
+      document.documentElement.classList.remove("dark");
       document
         .getElementById("logo")
         ?.setAttribute("src", "/logo-transparent-black.png");
-      document.documentElement.classList.remove("dark");
     }
+
     localStorage.setItem("theme", theme);
   }, [theme]);
 
@@ -141,7 +150,7 @@ export default function ThemeToggle() {
                 onClick={() => handleClickTheme("light")}
                 class="flex px-2 w-full hover:bg-gray-100 dark:hover:bg-neutral-600 dark:hover:text-white p-2 items-center"
               >
-                <SunIcon />
+                <SunIcon className={"mr-2"} />
                 Light
               </button>
             </li>
@@ -150,7 +159,7 @@ export default function ThemeToggle() {
                 onClick={() => handleClickTheme("dark")}
                 class="flex px-2 w-full hover:bg-gray-100 dark:hover:bg-neutral-600 dark:hover:text-white p-2 items-center"
               >
-                <MoonIcon />
+                <MoonIcon className={"mr-2"} />
                 Dark
               </button>
             </li>
@@ -159,7 +168,7 @@ export default function ThemeToggle() {
                 onClick={handleSystemTheme}
                 class="flex px-2 w-full hover:bg-gray-100 dark:hover:bg-neutral-600 dark:hover:text-white p-2 items-center"
               >
-                <SystemIcon />
+                <SystemIcon className={"mr-2"} />
                 System
               </button>
             </li>
