@@ -1,16 +1,16 @@
 ---
-import type { HTMLAttributes } from 'astro/types'
+import type { HTMLAttributes } from "astro/types";
 
-type Props = HTMLAttributes<'a'>
+type Props = HTMLAttributes<"a">;
 
-const { href, class: className, ...props } = Astro.props
+const { href, class: className, ...props } = Astro.props;
 ---
 
 <a
   href={href}
   class:list={[
     className,
-    'underline decoration-wavy text-black dark:text-white decoration-green-600 hover:decoration-green-300 inline-block',
+    "underline decoration-wavy text-black dark:text-white decoration-green-600 hover:decoration-green-300 inline-block",
   ]}
   {...props}
   ><slot />
