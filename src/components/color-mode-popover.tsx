@@ -78,6 +78,7 @@ export default function ThemeToggle() {
   };
 
   const handleClickTheme = (name: string) => {
+    document.documentElement.setAttribute("data-theme", `github-${name}`);
     setTheme(name);
     setIsDropdownOpen(false);
   };
@@ -108,6 +109,8 @@ export default function ThemeToggle() {
   useEffect(() => {
     const isDark = theme === "dark";
     const isLight = theme === "light";
+
+    document.documentElement.setAttribute("data-theme", `github-${theme}`);
 
     if (isDark) {
       document.documentElement.classList.add("dark");
