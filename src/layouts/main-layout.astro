@@ -3,19 +3,19 @@ import Header from '../components/header.astro'
 ---
 
 <div
-  class="flex flex-col bg-[radial-gradient(rgba(201,201,201,0.7)_1.55px,rgba(229,229,247,0.7)_1.55px)] dark:bg-[radial-gradient(#2E2E32_1.33px,#121212_1.33px)] bg-[length:31px_31px] text-black dark:text-white"
+  class='flex flex-col bg-[radial-gradient(rgba(201,201,201,0.7)_1.55px,rgba(229,229,247,0.7)_1.55px)] dark:bg-[radial-gradient(#2E2E32_1.33px,#121212_1.33px)] bg-[length:31px_31px] text-black dark:text-white'
 >
   <div
-    class="flex
+    class='flex
   flex-1
   w-full
   items-stretch
   min-h-[100vh]
-  md:min-h-[100vh]"
+  md:min-h-[100vh]'
   >
-    <div class="flex flex-1 flex-col w-full">
+    <div class='flex flex-1 flex-col w-full'>
       <Header />
-      <main class="flex-1 w-full pt-14 max-w-[640px] mx-auto px-4">
+      <main class='flex-1 w-full pt-14 max-w-[640px] mx-auto px-4'>
         <slot />
       </main>
     </div>
