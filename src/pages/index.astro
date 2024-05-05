@@ -14,24 +14,28 @@ import MainLayout from '../layouts/main-layout.astro'
   </head>
   <body>
     <MainLayout>
-      <div class='flex flex-col space-y-5'>
+      <div class='flex flex-col'>
         <Hero />
         <SocialButtons />
-        <div class='grid items-baseline grid-cols-1 gap-6 md:grid-cols-12'>
+        <div class='grid items-baseline grid-cols-1 md:grid-cols-12 mt-3'>
           <h1
-            class='text-[rgba(0,0,0,0.51)] dark:text-[rgba(255,255,255,0.50)] font-thin col-span-2'
+            class='text-[rgba(0,0,0,0.48)] dark:text-[rgba(255,255,255,0.48)] col-span-2 font-thin mb-2'
           >
             Projects
           </h1>
-          <div class='col-span-10 font-thin'>
+          <div class='col-span-10 font-medium'>
             <a
               class='w-full flex items-baseline space-x-3 group cursor-pointer'
               href='https://github.com/aacevski/unwrapit.me'
               target='_blank'
             >
-              <h1 class='font-thin group-hover:text-blue-600'>unwrapit.me</h1>
+              <h1
+                class='group-hover:text-blue-600 text-[rgba(0,0,0, 1)] dark:text-[rgba(255,255,255,1)]'
+              >
+                unwrapit.me
+              </h1>
               <span
-                class='w-full border-t border-gray-300 border-dashed shrink dark:border-gray-600'
+                class='w-full border-t border-gray-400 border-dashed shrink dark:border-gray-600'
               ></span>
               <Icon
                 name='arrow-up-icon'
@@ -43,13 +47,17 @@ import MainLayout from '../layouts/main-layout.astro'
               href='https://github.com/aacevski/go-tify'
               target='_blank'
             >
-              <h1 class='font-thin group-hover:text-blue-600'>gotify</h1>
+              <h1
+                class='group-hover:text-blue-600 text-[rgba(0,0,0, 1)] dark:text-[rgba(255,255,255,1)]'
+              >
+                gotify
+              </h1>
               <span
-                class='w-full border-t border-gray-300 border-dashed shrink dark:border-gray-600'
+                class='w-full border-t border-gray-400 border-dashed shrink dark:border-gray-600'
               ></span>
               <Icon
                 name='arrow-up-icon'
-                class='w-6 h-6 group-hover:-translate-y-0.5 transform transition-all'
+                class='w-6 h-6 group-hover:-translate-y-0.5 transform transition-all text-'
               />
             </a>
           </div>
