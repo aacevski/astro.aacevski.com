@@ -110,8 +110,6 @@ export default function ThemeToggle() {
     const isDark = theme === "dark";
     const isLight = theme === "light";
 
-    document.documentElement.setAttribute("data-theme", `github-${theme}`);
-
     if (isDark) {
       document.documentElement.classList.add("dark");
       document
