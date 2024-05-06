@@ -8,18 +8,15 @@ type Props = CollectionEntry<'blog'>['data']
 const { title, description } = Astro.props
 ---
 
-<html lang='en' class="dark">
+<html lang='en' class='dark'>
   <head>
     <BaseHead title={title} description={description} />
   </head>
   <body>
     <MainLayout>
-      <article
-        class='prose prose-lg dark:prose-invert prose-headings:text-balance prose-figcaption:mt-0 prose-figcaption:text-base leading-7'
-      >
+      <article class='prose prose-md prose-invert'>
         <slot />
       </article>
     </MainLayout>
-    </style>
   </body>
 </html>

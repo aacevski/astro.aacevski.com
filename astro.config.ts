@@ -18,9 +18,9 @@ export default defineConfig({
       compat: true,
     }),
     expressiveCode({
-      themes: ['min-dark', 'min-light'],
+      themes: ['min-dark'],
       styleOverrides: {
-        codeFontFamily: 'JetBrains Mono',
+        codeFontFamily: 'IBM Plex Mono',
       },
     }),
     mdx(),

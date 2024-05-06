@@ -1,0 +1,24 @@
+---
+import MainLayout from '../layouts/main-layout.astro'
+import BaseHead from '../components/base-head.astro'
+import { SITE_TITLE } from '../consts'
+---
+
+<!doctype html>
+<html lang='en' class='dark'>
+  <head>
+    <BaseHead title={`${SITE_TITLE} | 404`} description='' />
+  </head>
+  <body>
+    <MainLayout>
+      <div
+        class='w-full flex items-center justify-center flex-col h-[calc(100vh-3.5rem-3.5rem-41px-2rem)]'
+      >
+        <h1 class='font-light text-[100px]'>:(</h1>
+        <h1 class='font-light text-[30px] text-center'>
+          something went terribly wrong
+        </h1>
+      </div>
+    </MainLayout>
+  </body>
+</html>
