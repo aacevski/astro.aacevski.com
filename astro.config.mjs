@@ -15,7 +15,7 @@ const astroExpressiveCodeOptions = {
 }
 
 export default defineConfig({
-  site: 'https://acevski.com',
+  site: 'https://astro.aacevski.com',
   integrations: [
     sitemap(),
     tailwind(),
