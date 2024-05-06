@@ -134,6 +134,7 @@ export default function ThemeToggle() {
   return (
     <div class='relative flex items-center justify-end md:justify-center'>
       <button
+        aria-label='Color mode toggle'
         onClick={handleClickDropdown}
         class='text-white font-medium rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-neutral-600 dark:hover:text-white md:px-2 py-2'
       >

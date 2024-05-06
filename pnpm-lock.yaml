@@ -33,6 +33,9 @@ importers:
       '@astrojs/vercel':
         specifier: ^7.5.4
         version: 7.5.4(astro@4.7.1(@types/node@20.12.8)(typescript@5.4.5))
+      '@vercel/speed-insights':
+        specifier: ^1.0.10
+        version: 1.0.10
       astro:
         specifier: ^4.7.1
         version: 4.7.1(@types/node@20.12.8)(typescript@5.4.5)
@@ -803,6 +806,29 @@ packages:
     resolution: {integrity: sha512-j4jCOOXke2t8cHZCIxu1dzKLHLcFmYzC3yqAK6MfZznOL1QIJKd0xcFsXK3zcqzU7ScsE2zWkiMMNHGMHgp+FA==, tarball: https://registry.npmjs.org/@vercel/nft/-/nft-0.26.4.tgz}
     engines: {node: '>=16'}
     hasBin: true
+
+  '@vercel/speed-insights@1.0.10':
+    resolution: {integrity: sha512-4uzdKB0RW6Ff2FkzshzjZ+RlJfLPxgm/00i0XXgxfMPhwnnsk92YgtqsxT9OcPLdJUyVU1DqFlSWWjIQMPkh0g==, tarball: https://registry.npmjs.org/@vercel/speed-insights/-/speed-insights-1.0.10.tgz}
+    peerDependencies:
+      '@sveltejs/kit': ^1 || ^2
+      next: '>= 13'
+      react: npm:@preact/compat@latest
+      svelte: ^4
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
 
   '@volar/kit@2.1.6':
     resolution: {integrity: sha512-dSuXChDGM0nSG/0fxqlNfadjpAeeo1P1SJPBQ+pDf8H1XrqeJq5gIhxRTEbiS+dyNIG69ATq1CArkbCif+oxJw==, tarball: https://registry.npmjs.org/@volar/kit/-/kit-2.1.6.tgz}
@@ -3695,6 +3721,8 @@ snapshots:
     transitivePeerDependencies:
       - encoding
       - supports-color
+
+  '@vercel/speed-insights@1.0.10': {}
 
   '@volar/kit@2.1.6(typescript@5.4.5)':
     dependencies:
