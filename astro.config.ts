@@ -5,15 +5,26 @@ import tailwind from '@astrojs/tailwind'
 import expressiveCode from 'astro-expressive-code'
 import icon from 'astro-icon'
 import { defineConfig } from 'astro/config'
+import vercel from '@astrojs/vercel/serverless'
 
+// https://astro.build/config
 export default defineConfig({
   site: 'https://astro.aacevski.com',
   integrations: [
     sitemap(),
     tailwind(),
     icon(),
-    preact({ compat: true }),
+    preact({
+      compat: true,
+    }),
     expressiveCode(),
     mdx(),
   ],
+  output: 'server',
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
 })
+
