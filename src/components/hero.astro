@@ -1,6 +1,6 @@
 ---
-import ColorfulLink from './colorful-link.astro'
 import { Image } from 'astro:assets'
+import ColorfulLink from './colorful-link.astro'
 ---
 
 <Image
@@ -12,11 +12,11 @@ import { Image } from 'astro:assets'
   height={96}
 />
 <h2 class='text-4xl font-medium mt-6'>Andrej Acevski</h2>
-<p class='mt-2 font-medium'>
+<p class='mt-2 italic'>
   software engineer, open source advocate, content creator
 </p>
 <p
-  class='text-[rgba(0,0,0,0.48)] dark:text-[rgba(255,255,255,0.48)] mt-2 font-light'
+  class='text-[rgba(0,0,0,0.48)] dark:text-[rgba(255,255,255,0.48)] mt-2'
 >
   During the day I'm a software engineer
   <ColorfulLink
@@ -25,5 +25,5 @@ import { Image } from 'astro:assets'
     target='_blank'
   >
     @CodeChem
-  </ColorfulLink>. At night I'm open sourcer and secretly an Arch Linux user.
+  </ColorfulLink>. At night I love to contribute to OSS and secretly I'm an Arch Linux user.
 </p>

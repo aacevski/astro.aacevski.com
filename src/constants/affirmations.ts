@@ -1,0 +1,17 @@
+export default [
+  'You are enough.',
+  'You embrace who you are.',
+  'Peace is within you.',
+  'You are strong and capable.',
+  'Growth is your journey.',
+  'You choose positivity today.',
+  'You are your best source of motivation.',
+  'You believe in your dreams.',
+  'Challenges make you stronger.',
+  'You radiate positive energy.',
+  'You are fearless.',
+  'Today is a good day.',
+  'You trust your intuition.',
+  'You celebrate your uniqueness.',
+  'Joy is found within you.',
+]

@@ -17,7 +17,12 @@ export default defineConfig({
     preact({
       compat: true,
     }),
-    expressiveCode(),
+    expressiveCode({
+      themes: ['min-dark', 'min-light'],
+      styleOverrides: {
+        codeFontFamily: 'JetBrains Mono',
+      },
+    }),
     mdx(),
   ],
   output: 'hybrid',

@@ -1,0 +1,24 @@
+---
+import affirmations from "../constants/affirmations"
+
+const affirmation = affirmations[Math.floor(Math.random() * affirmations.length)]
+---
+<footer
+class='flex items-center justify-center text-sm py-3  bottom-0 border-t dark:border-[rgba(255,255,255,0.12)] w-full dark:bg-[rgba(0,0,0,0.1)] left-0 px-4'
+>
+<div class="w-[640px] flex gap-2">
+<p
+  class='italic text-[rgba(0,0,0,0.48)] dark:text-[rgba(255,255,255,0.48)] text-xs shrink-0'
+>
+  {new Date().getFullYear()}
+</p>
+  <p class="italic dark:text-[rgba(255,255,255,0.48)] text-xs shrink-0">
+    |
+  </p>
+<p
+  class='max-w-lg italic text-[rgba(0,0,0,0.48)] dark:text-[rgba(255,255,255,0.48)] text-xs'
+>
+  {affirmation}
+</p>
+  </div>
+</footer>

@@ -6,17 +6,17 @@ pubDate: 'January 01 2024'
 
 ### What is Chakra UI?
 
-Chakra UI is a component library that allows you to build accessible, reusable, and themeable components.
+Chakra UI is a component library that allows you to build accessible, reusable,
+and themeable components.
 
-### How to theme components with Chakra UI
+There are two types of components in Chakra UI. Single-part components are
+components that have a single part, such as a `Button`. Multi-part components
+are components that have multiple parts, such as a `Input`.
 
-There are two types of components in Chakra UI.
-Single-part components are components that have a single part, such as a `Button`.
-Multi-part components are components that have multiple parts, such as a `Input`.
-
-#### Single-part components
-
-Single part components are those that can be styled as a whole, without the need to target individual parts. Examples of these include buttons, badges, and progress bars. To style these components, you can use the `defineStyle` and `defineStyleConfig` functions imported from `@chakra-ui/react`.
+Single part components are those that can be styled as a whole, without the need
+to target individual parts. Examples of these include buttons, badges, and
+progress bars. To style these components, you can use the `defineStyle` and
+`defineStyleConfig` functions imported from `@chakra-ui/react`.
 
 ```ts
 // src/theme/components/button.ts
@@ -33,12 +33,16 @@ export const buttonTheme = defineStyleConfig({
 })
 ```
 
-This code defines a `Button` component with two variants, `primary` and `secondary`. You can customize the styles of each variant by adding or modifying the properties in the `variants` object.
+This code defines a `Button` component with two variants, `primary` and
+`secondary`. You can customize the styles of each variant by adding or modifying
+the properties in the `variants` object.
 
-#### Multi-part components
-
-Multipart components are those that have different parts that need to be styled separately. Examples of these include inputs, checkboxes, and radio buttons. To style these components, you can use the inputAnatomy object imported from `@chakra-ui/anatomy` and the `createMultiStyleConfigHelpers` function imported from `@chakra-ui/react`.
-For instance, to style an input, you can use the following code:
+Multipart components are those that have different parts that need to be styled
+separately. Examples of these include inputs, checkboxes, and radio buttons. To
+style these components, you can use the inputAnatomy object imported from
+`@chakra-ui/anatomy` and the `createMultiStyleConfigHelpers` function imported
+from `@chakra-ui/react`. For instance, to style an input, you can use the
+following code:
 
 ```ts
 // src/theme/components/input.ts
@@ -62,9 +66,12 @@ const baseStyle = definePartsStyle({
 export const inputTheme = defineMultiStyleConfig({ baseStyle })
 ```
 
-This code defines an `Input` component with two parts, `field` and `addon`. You can customize the styles of each part by adding or modifying the properties in said part. You can also define variants and default props in the same way as for single part components.
+This code defines an `Input` component with two parts, `field` and `addon`. You
+can customize the styles of each part by adding or modifying the properties in
+said part. You can also define variants and default props in the same way as for
+single part components.
 
-```ts
+```ts title="my-test-file.js"
 // src/theme/index.ts
 import { extendTheme } from '@chakra-ui/react'
 import { inputTheme } from './components/input'
@@ -78,9 +85,10 @@ export const theme = extendTheme({
 })
 ```
 
-And last but not least, you need to add these custom to your `theme` object. You can do this by importing the `extendTheme` function from `@chakra-ui/react` and adding the `components` object to the `theme` object.
+And last but not least, you need to add these custom to your `theme` object. You
+can do this by importing the `extendTheme` function from `@chakra-ui/react` and
+adding the `components` object to the `theme` object.
 
-### Conclusion
-
-Are you feeling inspired and want to step into the open source world?
-If so, you can contribute to Chakra UI by adding theming documentation for [one of the components](https://github.com/chakra-ui/chakra-ui-docs/issues?q=is%3Aissue+is%3Aopen+label%3A%22created-by%3A+Chakra+UI+team%22).
+Are you feeling inspired and want to step into the open source world? If so, you
+can contribute to Chakra UI by adding theming documentation for
+[one of the components](https://github.com/chakra-ui/chakra-ui-docs/issues?q=is%3Aissue+is%3Aopen+label%3A%22created-by%3A+Chakra+UI+team%22).
