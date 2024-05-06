@@ -1,7 +1,6 @@
 ---
 import ColorModePopover from './color-mode-popover.tsx'
 import { Image } from 'astro:assets'
-import logo from '/public/logo.png'
 ---
 
 <div
@@ -13,10 +12,12 @@ import logo from '/public/logo.png'
     <a href='/' class='flex items-center cursor-pointer'>
       <Image
         id='logo'
-        src={logo}
+        src='/logo-transparent-white.png'
         alt="Andrej Acevski's logo"
         class='w-6 h-6 cursor-pointer'
         loading='eager'
+        width={24}
+        height={24}
       />
     </a>
     <ColorModePopover client:only='preact' />

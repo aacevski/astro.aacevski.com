@@ -1,14 +1,15 @@
 ---
 import ColorfulLink from './colorful-link.astro'
 import { Image } from 'astro:assets'
-import andrej from '/public/andrej.png'
 ---
 
 <Image
-  class='w-24 h-24 rounded-full'
-  src={andrej}
+  class='rounded-full'
+  src='/andrej.png'
   alt='Andrej Acevski turned with his back wearing a hoodie and using a laptop'
   loading='eager'
+  width={96}
+  height={96}
 />
 <h2 class='text-4xl font-medium mt-6'>Andrej Acevski</h2>
 <p class='mt-2 font-medium'>
