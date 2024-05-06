@@ -20,7 +20,7 @@ export default defineConfig({
     expressiveCode(),
     mdx(),
   ],
-  output: 'hybrid',
+  output: 'static',
   vite: {
     define: {
       'import.meta.env.PUBLIC_VERCEL_ANALYTICS_ID': JSON.stringify(
