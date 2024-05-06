@@ -9,7 +9,7 @@ import vercel from '@astrojs/vercel/serverless'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://astro.aacevski.com',
+  site: 'https://aacevski.com',
   integrations: [
     sitemap(),
     tailwind(),
