@@ -6,14 +6,6 @@ import expressiveCode from 'astro-expressive-code'
 import icon from 'astro-icon'
 import { defineConfig } from 'astro/config'
 
-/** @type {import('astro-expressive-code').AstroExpressiveCodeOptions} */
-const astroExpressiveCodeOptions = {
-  themes: ['github-light', 'github-dark'],
-  shiki: {
-    langs: [],
-  },
-}
-
 export default defineConfig({
   site: 'https://astro.aacevski.com',
   integrations: [
@@ -21,7 +13,7 @@ export default defineConfig({
     tailwind(),
     icon(),
     preact({ compat: true }),
-    expressiveCode(astroExpressiveCodeOptions),
+    expressiveCode(),
     mdx(),
   ],
 })
