@@ -5,6 +5,7 @@ import BaseHead from '../../components/base-head.astro'
 import Breadcrumbs from '../../components/breadcrumbs-blog.astro'
 import { SITE_TITLE } from '../../consts'
 import type { CollectionEntry } from 'astro:content'
+import BlogCard from '../../components/blog-card.astro'
 
 const posts = await getCollection('blog')
 
@@ -41,24 +42,7 @@ const postsByYear = years
               <h2>{posts[0].data.pubDate.getFullYear()}</h2>
               <ul class='flex flex-col w-full gap-4'>
                 {posts.map((post, index) => (
-                  <li>
-                    <a
-                      href={`/blog/${post.slug}`}
-                      class='block pl-2 rounded-md transition-colors'
-                    >
-                      <h3 class='text-xl font-semibold'>{post.data.title}</h3>
-                      <time class='text-gray-500 italic'>
-                        {new Intl.DateTimeFormat('en-US', {
-                          month: 'long',
-                          day: 'numeric',
-                          year: 'numeric',
-                        }).format(post.data.pubDate)}
-                      </time>
-                    </a>
-                    {index < posts.length - 1 && (
-                      <hr class='border-[#282828] mt-4' />
-                    )}
-                  </li>
+                  <BlogCard {...post} isLast={index === posts.length - 1} />
                 ))}
               </ul>
             </section>

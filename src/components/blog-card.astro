@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from 'astro:content'
+
+type Props = CollectionEntry<'blog'> & { isLast: boolean }
+
+const post = Astro.props
+---
+
+<li>
+  <a
+    href={`/blog/${post.slug}`}
+    class='block pl-2 rounded-md transition-colors'
+  >
+    <h3 class='text-xl font-semibold'>{post.data.title}</h3>
+    <time class='text-gray-500 italic'>
+      {
+        new Intl.DateTimeFormat('en-US', {
+          month: 'long',
+          day: 'numeric',
+          year: 'numeric',
+        }).format(post.data.pubDate)
+      }
+    </time>
+  </a>
+  {!post.isLast && <hr class='border-[#282828] mt-4' />}
+</li>
