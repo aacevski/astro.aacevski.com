@@ -1,5 +1,4 @@
 import mdx from '@astrojs/mdx'
-import preact from '@astrojs/preact'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
 import vercel from '@astrojs/vercel/serverless'
@@ -22,9 +21,6 @@ export default defineConfig({
     sitemap(),
     tailwind(),
     icon(),
-    preact({
-      compat: true,
-    }),
     expressiveCode({
       themes: [monoTheme],
       styleOverrides: {
