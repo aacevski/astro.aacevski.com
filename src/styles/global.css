@@ -34,8 +34,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: 'IBM Plex Mono', sans-serif;
-  margin: 0;
-  padding: 0;
+@layer base {
+  body {
+    font-family: 'IBM Plex Mono', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
 }

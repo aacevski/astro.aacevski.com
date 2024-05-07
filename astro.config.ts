@@ -5,6 +5,7 @@ import vercel from '@astrojs/vercel/serverless'
 import expressiveCode, { ExpressiveCodeTheme } from 'astro-expressive-code'
 import icon from 'astro-icon'
 import { defineConfig } from 'astro/config'
+import { FontaineTransform } from 'fontaine'
 import fs from 'node:fs'
 
 const jsoncString = fs.readFileSync(
@@ -43,6 +44,13 @@ export default defineConfig({
         process.env.VERCEL_URL,
       ),
     },
+    plugins: [
+      FontaineTransform.vite({
+        fallbacks: ['Arial'],
+        resolvePath: (id: string) =>
+          new URL(`./public/fonts${id}`, import.meta.url),
+      }),
+    ],
   },
   adapter: vercel({
     webAnalytics: {
