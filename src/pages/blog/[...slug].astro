@@ -3,6 +3,8 @@ import { getCollection, type CollectionEntry } from 'astro:content'
 import BlogPost from '../../layouts/blog-post.astro'
 import BreadcrumbsPost from '../../components/breadcrumbs-post.astro'
 
+import { ViewTransitions } from 'astro:transitions'
+
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
   return posts.map((post) => ({
@@ -16,12 +18,12 @@ const post = Astro.props;
 const { Content } = await post.render()
 ---
 
+<ViewTransitions />
 <BlogPost {...post.data}> 
     <BreadcrumbsPost title={post.data.title} slug={post.slug} />
      <article class='prose max-w-3xl prose-invert'>
        <h1 class="mb-0">{post.data.title}</h1>
-    <p class="mt-1">{new Date(post.data.pubDate).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
-
+       <p class="mt-1">{new Date(post.data.pubDate).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
        <Content />
     </article>
 </BlogPost>
