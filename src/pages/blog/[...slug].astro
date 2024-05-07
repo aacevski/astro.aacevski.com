@@ -9,13 +9,13 @@ export async function getStaticPaths() {
     props: post,
   }))
 }
-type Props = CollectionEntry<'blog'>
+type Props = CollectionEntry<'blog'>['data'] & { slug: string }
 
-const post = Astro.props
+const post = Astro.props;
 const { Content } = await post.render()
 ---
 
-<BlogPost slug={post.slug} {...post.data}>
+<BlogPost {...post} slug={post.slug}> 
     <h1 class="mb-0">{post.data.title}</h1>
     <p class="mt-1">{new Date(post.data.pubDate).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
   <Content />

@@ -4,21 +4,20 @@ import BaseHead from '../components/base-head.astro'
 import MainLayout from './main-layout.astro'
 import BreadcrumbsPost from '../components/breadcrumbs-post.astro'
 
-type Props = CollectionEntry<'blog'>
+type Props = CollectionEntry<'blog'>['data'] & {
+  slug: string
+}
 
-const {
-  data: { title, description },
-  slug,
-} = Astro.props
+const post = Astro.props
 ---
 
 <html lang='en' class='dark'>
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={post.title} description={post.description} />
   </head>
   <body>
     <MainLayout>
-      <BreadcrumbsPost slug={slug} title={title} />
+      <BreadcrumbsPost slug={post.slug} title={post.title} />
       <article class='prose max-w-3xl prose-invert'>
         <slot />
       </article>
