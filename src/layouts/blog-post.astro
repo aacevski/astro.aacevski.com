@@ -2,11 +2,8 @@
 import type { CollectionEntry } from 'astro:content'
 import BaseHead from '../components/base-head.astro'
 import MainLayout from './main-layout.astro'
-import BreadcrumbsPost from '../components/breadcrumbs-post.astro'
 
-type Props = CollectionEntry<'blog'>['data'] & {
-  slug: string
-}
+type Props = CollectionEntry<'blog'>['data']
 
 const post = Astro.props
 ---
@@ -17,7 +14,6 @@ const post = Astro.props
   </head>
   <body>
     <MainLayout>
-      <BreadcrumbsPost slug={post.slug} title={post.title} />
       <article class='prose max-w-3xl prose-invert'>
         <slot />
       </article>
