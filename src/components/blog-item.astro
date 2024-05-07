@@ -1,0 +1,28 @@
+---
+type Props = {
+  name: string
+  url: string
+  date: string
+}
+
+const { name, url, date } = Astro.props
+---
+
+<a
+  class='w-full flex items-baseline group cursor-pointer flex-col'
+  href={url}
+  target='_blank'
+>
+  <div class='flex w-full items-baseline space-x-3'>
+    <p
+      class='group-hover:text-blue-600 text-[rgba(0,0,0, 1)] dark:text-[rgba(255,255,255,1)] font-light shrink-0 break-words group-hover:-translate-y-0.5 transform transition-all'
+    >
+      {name}
+    </p>
+  </div>
+  <p
+    class='text-[rgba(0,0,0,0.48)] dark:text-[rgba(255,255,255,0.48)] font-light shrink-0 group-hover:-translate-y-0.5 transform transition-all'
+  >
+    {date}
+  </p>
+</a>

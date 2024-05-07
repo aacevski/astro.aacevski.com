@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content'
+import BlogItem from './blog-item.astro'
+
+const blogs = await getCollection('blog')
+---
+
+<div class='grid items-baseline grid-cols-1 md:grid-cols-12 mt-8'>
+  <h1
+    class='text-[rgba(0,0,0,0.48)] dark:text-[rgba(255,255,255,0.48)] col-span-2 mb-2 italic'
+  >
+    Blog
+  </h1>
+  <div class='col-span-10 font-light space-y-2'>
+    {
+      blogs.map((blog) => (
+        <BlogItem
+          name={blog.data.title}
+          url={`/blog/${blog.slug}`}
+          date={new Date(blog.data.pubDate).toLocaleDateString('en-US', {
+            month: 'numeric',
+            year: '2-digit',
+          })}
+        />
+      ))
+    }
+  </div>
+</div>

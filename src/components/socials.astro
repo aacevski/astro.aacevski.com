@@ -1,0 +1,24 @@
+---
+import SocialItem from './social-item.astro'
+---
+
+<div class='grid items-baseline grid-cols-1 md:grid-cols-12 mt-8'>
+  <h1
+    class='text-[rgba(0,0,0,0.48)] dark:text-[rgba(255,255,255,0.48)] col-span-2 mb-2 italic'
+  >
+    Socials
+  </h1>
+  <div class='col-span-10 font-light space-y-2'>
+    <SocialItem
+      name='Twitter'
+      url='https://twitter.com/aacevski'
+      text='Follow'
+    />
+    <SocialItem name='Github' url='https://github.com/aacevski' text='Star' />
+    <SocialItem
+      name='LinkedIn'
+      url='https://linkedin.com/in/aacevski'
+      text='Connect'
+    />
+  </div>
+</div>

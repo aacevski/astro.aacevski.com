@@ -1,7 +1,9 @@
 ---
 import BaseHead from '../components/base-head.astro'
+import Blogs from '../components/blogs.astro'
 import Hero from '../components/hero.astro'
 import Projects from '../components/projects.astro'
+import Socials from '../components/socials.astro'
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts'
 import MainLayout from '../layouts/main-layout.astro'
 ---
@@ -15,6 +17,8 @@ import MainLayout from '../layouts/main-layout.astro'
     <MainLayout>
       <Hero />
       <Projects />
+      <Socials />
+      <Blogs />
     </MainLayout>
   </body>
 </html>

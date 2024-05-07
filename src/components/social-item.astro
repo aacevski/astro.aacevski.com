@@ -1,16 +1,15 @@
 ---
-import { Icon } from 'astro-icon/components'
-
 type Props = {
   name: string
   url: string
+  text: string
 }
 
-const { name, url } = Astro.props
+const { name, url, text } = Astro.props
 ---
 
 <a
-  class='w-full flex items-baseline space-x-3 group cursor-pointer group-hover:-translate-y-0.5 transform transition-all'
+  class='w-full flex items-baseline space-x-3 group cursor-pointer'
   href={url}
   target='_blank'
 >
@@ -22,8 +21,9 @@ const { name, url } = Astro.props
   <span
     class='w-full border-t border-[rgba(255,255,255,0.48)] border-dashed shrink group-hover:-translate-y-0.5 transform transition-all'
   ></span>
-  <Icon
-    name='arrow-up-icon'
-    class='w-6 h-6 group-hover:-translate-y-0.5 transform transition-all'
-  />
+  <p
+    class='text-[rgba(255,255,255,0.48)] font-light shrink-0 group-hover:-translate-y-0.5 transform transition-all'
+  >
+    {text}
+  </p>
 </a>

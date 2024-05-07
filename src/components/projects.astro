@@ -15,39 +15,3 @@ const blogs = await getCollection('blog')
     <ProjectItem name='go-tify' url='https://github.com/aacevski/go-tify' />
   </div>
 </div>
-
-<div class='grid items-baseline grid-cols-1 md:grid-cols-12 mt-8'>
-  <h1
-    class='text-[rgba(0,0,0,0.48)] dark:text-[rgba(255,255,255,0.48)] col-span-2 mb-2 italic'
-  >
-    Socials
-  </h1>
-  <div class='col-span-10 font-light space-y-2'>
-    <ProjectItem name='Github' url='https://github.com/aacevski' />
-    <ProjectItem name='Twitter' url='https://twitter.com/aacevski' />
-    <ProjectItem name='LinkedIn' url='https://linkedin.com/in/aacevski' />
-  </div>
-</div>
-
-<div class='grid items-baseline grid-cols-1 md:grid-cols-12 mt-8'>
-  <h1
-    class='text-[rgba(0,0,0,0.48)] dark:text-[rgba(255,255,255,0.48)] col-span-2 mb-2 italic'
-  >
-    Blog
-  </h1>
-  <div class='col-span-10 font-light space-y-2'>
-    {
-      blogs.map((blog) => (
-        <ProjectItem
-          name={blog.data.title}
-          url={`/blog/${blog.slug}`}
-          isExternal={false}
-          date={new Date(blog.data.pubDate).toLocaleDateString('en-US', {
-            month: 'numeric',
-            year: '2-digit',
-          })}
-        />
-      ))
-    }
-  </div>
-</div>
