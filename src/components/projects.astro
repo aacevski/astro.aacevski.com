@@ -1,13 +1,12 @@
 ---
+import { getCollection } from 'astro:content'
 import ProjectItem from './project-item.astro'
+
+const blogs = await getCollection('blog')
 ---
 
 <div class='grid items-baseline grid-cols-1 md:grid-cols-12 mt-2'>
-  <h1
-    class='text-[rgba(0,0,0,0.48)] dark:text-[rgba(255,255,255,0.48)] col-span-2 mb-2 italic'
-  >
-    Projects
-  </h1>
+  <h1 class='text-[rgba(255,255,255,0.48)] col-span-2 mb-2 italic'>Projects</h1>
   <div class='col-span-10 font-light space-y-2'>
     <ProjectItem
       name='unwrapit.me'
@@ -37,6 +36,18 @@ import ProjectItem from './project-item.astro'
     Blog
   </h1>
   <div class='col-span-10 font-light space-y-2'>
-    <p class='italic'>Coming soon...</p>
+    {
+      blogs.map((blog) => (
+        <ProjectItem
+          name={blog.data.title}
+          url={`/blog/${blog.slug}`}
+          isExternal={false}
+          date={new Date(blog.data.pubDate).toLocaleDateString('en-US', {
+            month: 'numeric',
+            year: '2-digit',
+          })}
+        />
+      ))
+    }
   </div>
 </div>

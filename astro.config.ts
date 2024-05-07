@@ -2,10 +2,18 @@ import mdx from '@astrojs/mdx'
 import preact from '@astrojs/preact'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
-import expressiveCode from 'astro-expressive-code'
+import vercel from '@astrojs/vercel/serverless'
+import expressiveCode, { ExpressiveCodeTheme } from 'astro-expressive-code'
 import icon from 'astro-icon'
 import { defineConfig } from 'astro/config'
-import vercel from '@astrojs/vercel/serverless'
+import fs from 'node:fs'
+
+const jsoncString = fs.readFileSync(
+  new URL(`./public/mono-theme.jsonc`, import.meta.url),
+  'utf-8',
+)
+
+const monoTheme = ExpressiveCodeTheme.fromJSONString(jsoncString)
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,9 +26,13 @@ export default defineConfig({
       compat: true,
     }),
     expressiveCode({
-      themes: ['min-dark'],
+      themes: [monoTheme],
       styleOverrides: {
         codeFontFamily: 'IBM Plex Mono',
+        borderColor: '#282828',
+        frames: {
+          shadowColor: 'none',
+        },
       },
     }),
     mdx(),

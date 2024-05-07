@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components'
 
-const { name, url } = Astro.props
+const { name, url, isExternal = true, date } = Astro.props
 ---
 
 <a
@@ -10,15 +10,24 @@ const { name, url } = Astro.props
   target='_blank'
 >
   <p
-    class='group-hover:text-blue-600 text-[rgba(0,0,0, 1)] dark:text-[rgba(255,255,255,1)] font-light shrink-0'
+    class='group-hover:text-blue-600 text-[rgba(0,0,0, 1)] dark:text-[rgba(255,255,255,1)] font-light shrink-0 break-words' 
   >
     {name}
   </p>
   <span
     class='w-full border-t border-[rgba(255,255,255,0.48)] border-dashed shrink'
   ></span>
-  <Icon
-    name='arrow-up-icon'
-    class='w-6 h-6 group-hover:-translate-y-0.5 transform transition-all'
-  />
+  {isExternal && (
+    <Icon
+      name='arrow-up-icon'
+      class='w-6 h-6 group-hover:-translate-y-0.5 transform transition-all'
+    />
+  )}
+  {date && (
+    <p
+      class='text-[rgba(0,0,0,0.48)] dark:text-[rgba(255,255,255,0.48)] font-light shrink-0'
+    >
+      {date}
+    </p>
+  )
 </a>
