@@ -3,6 +3,7 @@
   font-style: normal;
   font-weight: 400;
   src: url('/fonts/IBMPlexMono-Regular.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
   font-style: normal;
   font-weight: 700;
   src: url('/fonts/IBMPlexMono-Bold.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
@@ -17,6 +19,7 @@
   font-style: italic;
   font-weight: 400;
   src: url('/fonts/IBMPlexMono-Italic.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
@@ -24,6 +27,7 @@
   font-style: normal;
   font-weight: 600;
   src: url('/fonts/IBMPlexMono-SemiBold.woff2') format('woff2');
+  font-display: swap;
 }
 
 @tailwind base;
